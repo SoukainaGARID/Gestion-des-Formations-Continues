@@ -19,9 +19,10 @@ import java.util.List;
  * @author GIGA STORE
  */
 public class InscriptionFormationService implements IDao<InscriptionFormation> {
-    private  Connexion connexion;
-    private  FormationService formationService;
-    private  ParticipantService participantService;
+
+    private Connexion connexion;
+    private FormationService formationService;
+    private ParticipantService participantService;
 
     public InscriptionFormationService() {
         connexion = Connexion.getInstance();
@@ -59,21 +60,19 @@ public class InscriptionFormationService implements IDao<InscriptionFormation> {
         return false;
     }
 
-
-
     @Override
     public boolean update(InscriptionFormation o) {
         // Cette méthode n'est pas applicable car InscriptionFormation n'a pas d'attribut a modifier
-       
+
         return false;
     }
 
     @Override
     public InscriptionFormation findById(int id) {
         // Cette méthode n'est pas applicable car InscriptionFormation n'a pas d'ID unique.
-       
-        return null; 
-    } 
+
+        return null;
+    }
 
     @Override
     public List<InscriptionFormation> findAll() {

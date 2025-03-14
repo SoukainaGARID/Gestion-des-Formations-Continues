@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package services;
+
 import beans.Formation;
 import dao.IDao;
 import connexion.Connexion;
@@ -15,10 +16,9 @@ import java.util.List;
  *
  * @author GIGA STORE
  */
-
 public class FormationService implements IDao<Formation> {
-    
-     private Connexion connexion;
+
+    private Connexion connexion;
 
     public FormationService() {
         connexion = Connexion.getInstance();
@@ -102,5 +102,5 @@ public class FormationService implements IDao<Formation> {
         }
         return formations;
     }
-    
+
 }

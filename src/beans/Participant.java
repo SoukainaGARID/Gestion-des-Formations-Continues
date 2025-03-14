@@ -7,13 +7,14 @@ package beans;
 
 /**
  *
- * @author GIGA STORE
+ * @auFthor GIGA STORE
  */
 public class Participant {
+
     private int id;
     private String nom;
     private String prenom;
-    private String email; 
+    private String email;
 
     public Participant(int id, String nom, String prenom, String email) {
         this.id = id;
@@ -59,5 +60,5 @@ public class Participant {
     public void setEmail(String email) {
         this.email = email;
     }
-    
+
 }

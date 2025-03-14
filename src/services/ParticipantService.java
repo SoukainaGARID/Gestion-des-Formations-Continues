@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package services;
+
 import beans.Participant;
 import dao.IDao;
 import connexion.Connexion;

@@ -10,6 +10,7 @@ package beans;
  * @author GIGA STORE
  */
 public class Formation {
+
     private int id;
     private String intitule;
     private int duree;
@@ -59,6 +60,5 @@ public class Formation {
     public void setCout(double cout) {
         this.cout = cout;
     }
-    
-    
+
 }

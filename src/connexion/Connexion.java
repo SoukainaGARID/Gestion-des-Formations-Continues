@@ -13,22 +13,22 @@ import java.sql.SQLException;
  *
  * @author GIGA STORE
  */
-
 public class Connexion {
-    // Instance unique de Connexion
+
+   
+
     private static Connexion instance = null;
     private Connection cn = null;
-    
+
     // Informations de connexion
-    private final String url = "jdbc:mysql://localhost:3306/gestionformations"; 
-    private final String login = "root"; 
-    private final String password = ""; 
-    
-     // Constructeur privé pour empêcher l'instanciation directe
+    private final String url = "jdbc:mysql://localhost:3306/gestionformations";
+    private final String login = "root";
+    private final String password = "";
+
+    // Constructeur privé pour empêcher l'instanciation directe
     private Connexion() {
         try {
-            
-            
+
             Class.forName("com.mysql.jdbc.Driver");
             cn = DriverManager.getConnection(url, login, password);
         } catch (ClassNotFoundException ex) {
