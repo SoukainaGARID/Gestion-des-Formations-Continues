@@ -82,6 +82,7 @@ Dans le cadre de la gestion des formations continues au sein d'une institution o
 
 ### 3. **Architecture du Système**
   
+<img width="544" alt="image" src="https://github.com/user-attachments/assets/ed293889-04c8-4c18-abfd-1ef59b83fdd5" />
 
 ## Technologies Utilisées
 
