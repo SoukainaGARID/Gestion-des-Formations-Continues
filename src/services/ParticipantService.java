@@ -5,6 +5,7 @@
  */
 package services;
 
+import beans.Formation;
 import beans.Participant;
 import dao.IDao;
 import connexion.Connexion;
@@ -86,6 +87,13 @@ public class ParticipantService implements IDao<Participant> {
         }
         return null;
     }
+    
+    
+
+
+
+
+
 
     @Override
     public List<Participant> findAll() {
@@ -102,4 +110,26 @@ public class ParticipantService implements IDao<Participant> {
         }
         return participants;
     }
+    public List<Participant> findByFormation(Formation formation) {
+    List<Participant> participants = new ArrayList<>();
+    String req = "SELECT p.* FROM participant p " +
+                 "JOIN inscriptionformation i ON p.id = i.participant_id " +
+                 "WHERE i.formation_id = ?";
+    try {
+        PreparedStatement ps = connexion.getCn().prepareStatement(req);
+        ps.setInt(1, formation.getId());  // Utilisez l'ID de la formation pour la recherche
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) {
+            participants.add(new Participant(
+                rs.getInt("id"),
+                rs.getString("nom"),
+                rs.getString("prenom"),
+                rs.getString("email")
+            ));
+        }
+    } catch (SQLException ex) {
+        System.out.println("Erreur lors de la recherche des participants: " + ex.getMessage());
+    }
+    return participants;
+}
 }

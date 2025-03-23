@@ -13,6 +13,7 @@ import connexion.Connexion;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import org.jfree.data.category.CategoryDataset;
 
 /**
  *
@@ -90,5 +91,9 @@ public class InscriptionFormationService implements IDao<InscriptionFormation> {
             System.out.println(ex.getMessage());
         }
         return inscriptions;
+    }
+
+    public CategoryDataset createDataset() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

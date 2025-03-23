@@ -61,4 +61,10 @@ public class Participant {
         this.email = email;
     }
 
+    @Override
+    public String toString() {
+        return   nom + " " + prenom ;
+    }
+    
+
 }

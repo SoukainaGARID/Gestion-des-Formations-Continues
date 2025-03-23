@@ -102,5 +102,38 @@ public class FormationService implements IDao<Formation> {
         }
         return formations;
     }
+    public List<Formation> findByName(String name) {
+    List<Formation> formations = new ArrayList<>();
+    String req = "SELECT * FROM formation WHERE intitule LIKE ?";
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+
+    try {
+        ps = connexion.getCn().prepareStatement(req);
+        ps.setString(1, "%" + name + "%"); // Utilise LIKE pour permettre des correspondances partielles
+        rs = ps.executeQuery();
+
+        while (rs.next()) {
+            formations.add(new Formation(
+                rs.getInt("id"),
+                rs.getString("intitule"),
+                rs.getInt("duree"),
+                rs.getDouble("cout")
+            ));
+        }
+    } catch (SQLException ex) {
+        System.out.println("Erreur lors de la recherche des formations par nom : " + ex.getMessage());
+    } finally {
+        // Fermeture des ressources
+        try {
+            if (rs != null) rs.close();
+            if (ps != null) ps.close();
+        } catch (SQLException ex) {
+            System.out.println("Erreur lors de la fermeture des ressources : " + ex.getMessage());
+        }
+    }
+    return formations; // Retourne la liste des formations correspondantes (ou vide si aucune)
+}
+
 
 }

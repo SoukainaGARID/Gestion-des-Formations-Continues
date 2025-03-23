@@ -61,4 +61,9 @@ public class Formation {
         this.cout = cout;
     }
 
+    @Override
+    public String toString() {
+        return  intitule ;
+    }
+
 }
