@@ -124,7 +124,7 @@ L'application permet de gérer les trois principales entités :
 
 ## Vidéo de démonstration
 
-https://github.com/user-attachments/assets/2ded0741-44fb-42a9-88c0-90ad5f9b07a0
+
 https://github.com/user-attachments/assets/f3e40d5f-f9f1-4a84-985b-554daed0dfcb
 
 
